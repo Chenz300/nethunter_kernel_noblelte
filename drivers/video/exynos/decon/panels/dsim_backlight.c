@@ -129,7 +129,11 @@ static char dsim_panel_get_elvssoffset(struct dsim_device *dsim)
 	if((!bIsHbm) && (panel->interpolation)) {
 		if(panel->weakness_hbm_comp == HBM_COLORBLIND_ON)
 			retVal = -panel->hbm_elvss_comp;
+#ifdef CONFIG_LCD_BURNIN_CORRECTION
 		else if((panel->weakness_hbm_comp == HBM_GALLERY_ON) || (panel->ldu_correction_state != 0))
+#else
+		else if(panel->weakness_hbm_comp == HBM_GALLERY_ON)
+#endif
 			retVal = -HBM_INTER_22TH_OFFSET[panel->br_index - 65];
 		else
 			pr_info("%s invaid weakness_hbm_comp:%d\n", __func__, panel->weakness_hbm_comp);
