@@ -1,5 +1,5 @@
 #!/bin/bash
-# Samsung kernel for Samsung Galaxy Note 5 / S6 / S6 Edge / S6 Edge+ build script by jcadduono
+# TWRP kernel for Samsung Galaxy Note 5 / S6 / S6 Edge / S6 Edge+ build script by jcadduono
 
 ################### BEFORE STARTING ################
 #
@@ -57,7 +57,7 @@ export ARCH=arm64
 export CROSS_COMPILE=$TOOLCHAIN/bin/aarch64-linux-android-
 
 [ "$DEVICE" ] || DEVICE=noblelte
-[ "$TARGET" ] || TARGET=samsung
+[ "$TARGET" ] || TARGET=twrp
 [ "$1" ] && {
 	VARIANT=$1
 } || {
