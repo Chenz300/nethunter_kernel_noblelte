@@ -10,7 +10,7 @@ TOOLCHAIN=$HOME/build/toolchain/android-arm64-4.9
 export ARCH=arm64
 export CROSS_COMPILE=$TOOLCHAIN/bin/aarch64-linux-android-
 
-[ "$TARGET" ] || TARGET=samsung
+[ "$TARGET" ] || TARGET=nethunter
 DEFCONFIG=${TARGET}_defconfig
 DEFCONFIG_FILE=$RDIR/arch/$ARCH/configs/$DEFCONFIG
 
